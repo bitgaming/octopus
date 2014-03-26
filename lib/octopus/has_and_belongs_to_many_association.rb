@@ -4,4 +4,8 @@ module Octopus::HasAndBelongsToManyAssociation
   end
 end
 
-ActiveRecord::Associations::HasManyThroughAssociation.send(:include, Octopus::HasAndBelongsToManyAssociation)
+if Octopus.rails3?
+  ActiveRecord::Associations::HasAndBelongsToManyAssociation.send(:include, Octopus::HasAndBelongsToManyAssociation)
+else
+  ActiveRecord::Associations::HasManyThroughAssociation.send(:include, Octopus::HasAndBelongsToManyAssociation)
+end
