@@ -4,4 +4,4 @@ module Octopus::HasAndBelongsToManyAssociation
   end
 end
 
-ActiveRecord::Associations::HasAndBelongsToManyAssociation.send(:include, Octopus::HasAndBelongsToManyAssociation)
+ActiveRecord::Associations::HasManyThroughAssociation.send(:include, Octopus::HasAndBelongsToManyAssociation)
